@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		504EC09C1C2B23970041ACE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC09B1C2B23970041ACE4 /* AppDelegate.swift */; };
 		504EC09E1C2B23970041ACE4 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC09D1C2B23970041ACE4 /* CurrentLocationViewController.swift */; };
-		504EC0A01C2B23970041ACE4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504EC09F1C2B23970041ACE4 /* SecondViewController.swift */; };
 		504EC0A31C2B23970041ACE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC0A11C2B23970041ACE4 /* Main.storyboard */; };
 		504EC0A51C2B23970041ACE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504EC0A41C2B23970041ACE4 /* Assets.xcassets */; };
 		504EC0A81C2B23970041ACE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */; };
+		50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		504EC0981C2B23970041ACE4 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504EC09B1C2B23970041ACE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		504EC09D1C2B23970041ACE4 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
-		504EC09F1C2B23970041ACE4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		504EC0A21C2B23970041ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		504EC0A41C2B23970041ACE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		504EC0A71C2B23970041ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		504EC0A91C2B23970041ACE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				504EC09B1C2B23970041ACE4 /* AppDelegate.swift */,
 				504EC09D1C2B23970041ACE4 /* CurrentLocationViewController.swift */,
-				504EC09F1C2B23970041ACE4 /* SecondViewController.swift */,
+				50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */,
 				504EC0A11C2B23970041ACE4 /* Main.storyboard */,
 				504EC0A41C2B23970041ACE4 /* Assets.xcassets */,
 				504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				504EC0A01C2B23970041ACE4 /* SecondViewController.swift in Sources */,
+				50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */,
 				504EC09C1C2B23970041ACE4 /* AppDelegate.swift in Sources */,
 				504EC09E1C2B23970041ACE4 /* CurrentLocationViewController.swift in Sources */,
 			);
@@ -288,6 +288,7 @@
 				504EC0AE1C2B23970041ACE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
