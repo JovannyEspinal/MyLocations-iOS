@@ -92,7 +92,7 @@
         <scene sceneID="SS4-jG-AZ3">
             <objects>
                 <tableViewController id="M96-9q-tfS" customClass="LocationDetailsViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="M3L-qG-Yf6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="M3L-qG-Yf6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -322,6 +322,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hLc-fD-8Og" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="fNf-E7-dkF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -332,6 +335,7 @@
                     <navigationItem key="navigationItem" id="VER-PD-qCZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy2-Xb-Ubr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hLc-fD-8Og" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1702" y="-303"/>
         </scene>
