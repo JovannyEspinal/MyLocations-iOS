@@ -13,6 +13,7 @@
 		504EC0A51C2B23970041ACE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504EC0A41C2B23970041ACE4 /* Assets.xcassets */; };
 		504EC0A81C2B23970041ACE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */; };
 		50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */; };
+		50F37F3A1C2F479700F90F45 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		504EC0A41C2B23970041ACE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		504EC0A71C2B23970041ACE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		504EC0A91C2B23970041ACE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				504EC0A41C2B23970041ACE4 /* Assets.xcassets */,
 				504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */,
 				504EC0A91C2B23970041ACE4 /* Info.plist */,
+				50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F37F3A1C2F479700F90F45 /* CategoryPickerViewController.swift in Sources */,
 				50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */,
 				504EC09C1C2B23970041ACE4 /* AppDelegate.swift in Sources */,
 				504EC09E1C2B23970041ACE4 /* CurrentLocationViewController.swift in Sources */,

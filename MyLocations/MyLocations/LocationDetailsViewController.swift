@@ -24,14 +24,16 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
+    var categoryName = "No Category"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         descriptionTextView.text = ""
-        categoryLabel.text = ""
+        categoryLabel.text = categoryName
         
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
         longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
@@ -93,15 +95,23 @@ class LocationDetailsViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.section == 0 && indexPath.row == 0 {
-        return 88
-    } else if indexPath.section == 2 && indexPath.row == 2 {
-        addressLabel.frame.size = CGSize( width: view.bounds.size.width - 115, height: 10000)
-        addressLabel.sizeToFit()
-        addressLabel.frame.origin.x = view.bounds.size.width -
-        addressLabel.frame.size.width - 15
-        return addressLabel.frame.size.height + 20
-    } else {
-        return 44
+            return 88
+        } else if indexPath.section == 2 && indexPath.row == 2 {
+            addressLabel.frame.size = CGSize( width: view.bounds.size.width - 115, height: 10000)
+            addressLabel.sizeToFit()
+            addressLabel.frame.origin.x = view.bounds.size.width -
+            addressLabel.frame.size.width - 15
+            return addressLabel.frame.size.height + 20
+        } else {
+            return 44
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+                
+                if segue.identifier == "PickCategory" {
+                let controller = segue.destinationViewController as! CategoryPickerViewController
+                controller.selectedCategoryName = categoryName
+                }
     }
 }
