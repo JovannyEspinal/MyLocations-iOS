@@ -15,6 +15,7 @@
 		50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */; };
 		50F37F3A1C2F479700F90F45 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */; };
 		50F37F3C1C2F531000F90F45 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F3B1C2F531000F90F45 /* HudView.swift */; };
+		50F37F3E1C2F65A400F90F45 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F37F3D1C2F65A400F90F45 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		50F37F3B1C2F531000F90F45 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		50F37F3D1C2F65A400F90F45 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,9 @@
 				504EC09D1C2B23970041ACE4 /* CurrentLocationViewController.swift */,
 				50F37F371C2E52EF00F90F45 /* LocationDetailsViewController.swift */,
 				50F37F391C2F479700F90F45 /* CategoryPickerViewController.swift */,
-				504EC0A11C2B23970041ACE4 /* Main.storyboard */,
 				50F37F3B1C2F531000F90F45 /* HudView.swift */,
+				50F37F3D1C2F65A400F90F45 /* Functions.swift */,
+				504EC0A11C2B23970041ACE4 /* Main.storyboard */,
 				504EC0A41C2B23970041ACE4 /* Assets.xcassets */,
 				504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */,
 				504EC0A91C2B23970041ACE4 /* Info.plist */,
@@ -149,6 +152,7 @@
 				50F37F381C2E52EF00F90F45 /* LocationDetailsViewController.swift in Sources */,
 				504EC09C1C2B23970041ACE4 /* AppDelegate.swift in Sources */,
 				504EC09E1C2B23970041ACE4 /* CurrentLocationViewController.swift in Sources */,
+				50F37F3E1C2F65A400F90F45 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
