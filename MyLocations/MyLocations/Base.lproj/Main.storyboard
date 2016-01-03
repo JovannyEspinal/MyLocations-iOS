@@ -161,6 +161,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TX1-YM-SlY">
+                                                    <rect key="frame" x="141" y="11" width="56" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -285,10 +289,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressLabel" destination="cIZ-jE-5HA" id="JoH-AT-KZ2"/>
+                        <outlet property="addPhotoLabel" destination="tXi-Ja-oun" id="UPf-U1-1gp"/>
+                        <outlet property="addressLabel" destination="cIZ-jE-5HA" id="PHW-Md-tsP"/>
                         <outlet property="categoryLabel" destination="xUS-aG-egp" id="XXR-mh-8J4"/>
                         <outlet property="dateLabel" destination="ds7-hm-s5n" id="ggf-KX-Plp"/>
                         <outlet property="descriptionTextView" destination="iqJ-BP-YrE" id="x5f-ht-6Df"/>
+                        <outlet property="imageView" destination="TX1-YM-SlY" id="D3V-D0-0N1"/>
                         <outlet property="latitudeLabel" destination="kWX-My-3rO" id="vnl-nY-29a"/>
                         <outlet property="longitudeLabel" destination="3JM-Wr-cLE" id="F0a-Wh-2el"/>
                     </connections>

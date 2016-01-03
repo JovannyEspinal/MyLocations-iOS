@@ -26,6 +26,8 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
@@ -44,11 +46,13 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     var descriptionText = ""
+    var image: UIImage?
+    var observer: AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let location = locationToEdit {
+        if let _ = locationToEdit {
             title = "Edit Location"
         }
         
@@ -69,6 +73,8 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard:"))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
         
     }
     
@@ -117,6 +123,13 @@ class LocationDetailsViewController: UITableViewController {
         return text
     }
     
+    func showImage(image: UIImage) {
+        imageView.image = image
+        imageView.hidden = false
+        imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+        addPhotoLabel.hidden = true
+    }
+    
     
     @IBAction func done() {
         let hudView = HudView.hudInView(navigationController!.view, animated: true)
@@ -129,7 +142,7 @@ class LocationDetailsViewController: UITableViewController {
             hudView.text = "Tagged"
             location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
         }
-
+        
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
         location.latitude = coordinate.latitude
@@ -148,6 +161,20 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    func listenForBackgroundNotification() {
+        observer = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidEnterBackgroundNotification, object: nil, queue: NSOperationQueue.mainQueue()){
+            [weak self] _ in
+            
+            if let strongSelf = self {
+                if strongSelf.presentedViewController != nil {
+                    strongSelf.dismissViewControllerAnimated(true, completion: nil)
+                }
+                
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
+    }
+    
     @IBAction func cancel() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -161,17 +188,24 @@ class LocationDetailsViewController: UITableViewController {
     // MARK: - UITableViewDelegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if indexPath.section == 0 && indexPath.row == 0 {
-            return 88
-        } else if indexPath.section == 2 && indexPath.row == 2 {
-            addressLabel.frame.size = CGSize( width: view.bounds.size.width - 115, height: 10000)
+        switch (indexPath.section, indexPath.row) {
+        case (0,0):
+            return 99
+            
+        case (1, _):
+            return imageView.hidden ? 44 : 280
+            
+        case (2, 2):
+            addressLabel.frame.size = CGSize(width: view.bounds.size.width - 115, height: 10000)
             addressLabel.sizeToFit()
-            addressLabel.frame.origin.x = view.bounds.size.width -
-            addressLabel.frame.size.width - 15
+            addressLabel.frame.origin.x = view.bounds.size.width - addressLabel.frame.size.width - 15
+            
             return addressLabel.frame.size.height + 20
-        } else {
+            
+        default:
             return 44
         }
+        
     }
     
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
@@ -186,16 +220,21 @@ class LocationDetailsViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0{
             descriptionTextView.becomeFirstResponder()
         } else if indexPath.section == 1 && indexPath.row == 0 {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
             takePhotoWithCamera()
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                
-                if segue.identifier == "PickCategory" {
-                let controller = segue.destinationViewController as! CategoryPickerViewController
-                controller.selectedCategoryName = categoryName
-                }
+        
+        if segue.identifier == "PickCategory" {
+            let controller = segue.destinationViewController as! CategoryPickerViewController
+            controller.selectedCategoryName = categoryName
+        }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(observer)
     }
 }
 
@@ -233,7 +272,7 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
         
         let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default, handler: { _ in self.takePhotoWithCamera() })
         alertController.addAction(takePhotoAction)
-    
+        
         let chooseFromLibrary = UIAlertAction(title: "Choose From Library", style: .Default, handler: { _ in self.choosePhotoFromLibrary() })
         alertController.addAction(chooseFromLibrary)
         
@@ -241,6 +280,13 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        if let image = image {
+            showImage(image)
+        }
+        
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
