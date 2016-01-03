@@ -115,8 +115,8 @@
 		506A42A51C31F293000530C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */,
 				50F37F3B1C2F531000F90F45 /* HudView.swift */,
+				504EC0A61C2B23970041ACE4 /* LaunchScreen.storyboard */,
 				504EC0A11C2B23970041ACE4 /* Main.storyboard */,
 			);
 			name = View;

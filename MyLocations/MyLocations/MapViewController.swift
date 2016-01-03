@@ -143,3 +143,9 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
 }
+
+extension MapViewController: UINavigationBarDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
+}
